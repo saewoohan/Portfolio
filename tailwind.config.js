@@ -4,6 +4,9 @@ module.exports = {
     ],
     theme: {
       extend: {},
+      fontFamily: {
+        pretendard: ["Pretendard"],
+      },
     },
-    plugins: [],
+    plugins: [require("tailwind-scrollbar-hide")],
   }
