@@ -1,6 +1,5 @@
 import { Drawer, IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { useState } from 'react'
 import { pages } from '../../common/utils/pages'
 import { MenuItem } from './MenuItems'
 type Props = {
@@ -10,19 +9,6 @@ type Props = {
 }
 
 export const MenuDrawer = ({ open, onClose, onClickMenu }: Props) => {
-  const [expandedSet, setExpandedSet] = useState<Set<number>>(new Set())
-
-  const handleToggleExpand = (index: number) => {
-    setExpandedSet((prev) => {
-      if (prev.has(index)) {
-        prev.delete(index)
-      } else {
-        prev.add(index)
-      }
-      return new Set(prev)
-    })
-  }
-
   return (
     <Drawer
       anchor="top"
@@ -43,12 +29,7 @@ export const MenuDrawer = ({ open, onClose, onClickMenu }: Props) => {
             key={item.index}
             className="flex flex-col justify-center items-center bg-black text-white"
           >
-            <MenuItem
-              item={item}
-              expandedSet={expandedSet}
-              onClickMenu={onClickMenu}
-              onToggleExpand={handleToggleExpand}
-            />
+            <MenuItem item={item} onClickMenu={onClickMenu} />
           </div>
         ))}
       </div>

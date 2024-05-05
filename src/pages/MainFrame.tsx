@@ -25,12 +25,13 @@ export const MainFrame = () => {
   return (
     <div
       ref={outerDivRef}
-      className="overflow-y-auto scrollbar-hide h-screen w-screen"
+      className="overflow-y-auto scrollbar-hide h-screen w-screen bg-black"
       style={{ height: `${height}px` }}
     >
       <OnBoarding />
       <TimeLine />
       <ProjectPages />
+
       <div className="absolute right-5 top-2">
         <IconButton onClick={() => setOpen(true)}>
           <MenuIcon className={'text-white'} fontSize="large" />
