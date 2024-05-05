@@ -10,7 +10,7 @@ export const pages: Page[] = [
   { name: 'Home', index: 0 },
   { name: 'History', index: 1 },
   {
-    name: 'Portfolio',
+    name: 'Projects',
     index: 2,
     items: [
       { name: 'Idea Networking', index: 3 },

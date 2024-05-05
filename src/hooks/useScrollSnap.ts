@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { PAGE_SIZE } from '../common/utils/pages'
 
-const DIVIDER_HEIGHT = 5
 const SCROLL_DEBOUNCE_TIME = 150
 
 export const useScrollSnap = () => {
@@ -47,7 +46,7 @@ export const useScrollSnap = () => {
       if (newPage !== currentPage) {
         setCurrentPage(newPage)
         outerDivRef.current?.scrollTo({
-          top: newPage * (window.innerHeight + DIVIDER_HEIGHT),
+          top: newPage * window.innerHeight,
           left: 0,
           behavior: 'smooth',
         })

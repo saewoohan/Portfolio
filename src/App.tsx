@@ -1,5 +1,10 @@
+import { PageProvider } from './pages/provider/PageContext'
 import { MainFrame } from './pages/MainFrame'
 
 export const App = () => {
-  return <MainFrame />
+  return (
+    <PageProvider>
+      <MainFrame />
+    </PageProvider>
+  )
 }

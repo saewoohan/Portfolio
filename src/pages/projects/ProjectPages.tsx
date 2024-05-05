@@ -1,11 +1,11 @@
 import { projectInfos } from './data'
 import { ProjectFrame } from './ProjectFrame'
-import { PortfolioGrid } from './ProjectGrid'
+import { ProjectGrid } from './ProjectGrid'
 
 export const ProjectPages = () => {
   return (
     <div>
-      <PortfolioGrid />
+      <ProjectGrid />
       {projectInfos.map((projectInfo) => (
         <ProjectFrame key={projectInfo.id} projectInfo={projectInfo} />
       ))}

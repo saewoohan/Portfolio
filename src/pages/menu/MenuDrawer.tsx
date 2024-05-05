@@ -6,7 +6,7 @@ import { MenuItem } from './MenuItems'
 type Props = {
   open: boolean
   onClose?: () => void
-  onClickMenu?: (page: number, subPage?: number) => void
+  onClickMenu?: (page: number) => void
 }
 
 export const MenuDrawer = ({ open, onClose, onClickMenu }: Props) => {

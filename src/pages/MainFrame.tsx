@@ -1,4 +1,3 @@
-import { useScrollSnap } from '../hooks/useScrollSnap'
 import { OnBoarding } from './OnBoarding'
 import { ProjectPages } from './projects/ProjectPages'
 import { TimeLine } from './timeLine/TimeLine'
@@ -6,21 +5,17 @@ import IconButton from '@mui/material/IconButton'
 import { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import { MenuDrawer } from './menu/MenuDrawer'
+import { usePage } from './provider/PageContext'
 
 export const MainFrame = () => {
-  const { outerDivRef, setCurrentPage } = useScrollSnap()
+  const { outerDivRef, onChangePage } = usePage()
+
   const height = window.innerHeight
   const [open, setOpen] = useState(false)
 
-  const handleClick = (page: number) => {
-    console.log(page)
-    setCurrentPage(page)
+  const handleClickMenu = (page: number) => {
+    onChangePage(page)
     setOpen(false)
-    outerDivRef.current?.scrollTo({
-      top: page * (window.innerHeight + 40),
-      left: 0,
-      behavior: 'smooth',
-    })
   }
 
   const handleCloseDrawer = () => {
@@ -36,7 +31,7 @@ export const MainFrame = () => {
       <OnBoarding />
       <TimeLine />
       <ProjectPages />
-      <div className="absolute right-5 top-2 flex flex-col items-center space-y-1">
+      <div className="absolute right-5 top-2">
         <IconButton onClick={() => setOpen(true)}>
           <MenuIcon className={'text-white'} fontSize="large" />
         </IconButton>
@@ -44,7 +39,7 @@ export const MainFrame = () => {
       <MenuDrawer
         open={open}
         onClose={handleCloseDrawer}
-        onClickMenu={handleClick}
+        onClickMenu={handleClickMenu}
       />
     </div>
   )
