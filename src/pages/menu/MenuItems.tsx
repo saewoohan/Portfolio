@@ -3,7 +3,6 @@ import { TextButton } from '../../common/components/TextButton'
 
 type Props = {
   item: Page
-
   onClickMenu?: (page: number) => void
 }
 

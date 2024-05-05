@@ -20,7 +20,10 @@ export const MenuDrawer = ({ open, onClose, onClickMenu }: Props) => {
     >
       <div className="absolute right-5 top-2">
         <IconButton onClick={onClose}>
-          <CloseIcon className="text-white" fontSize="large" />
+          <CloseIcon
+            className="text-white  hover:text-blue-500"
+            fontSize="large"
+          />
         </IconButton>
       </div>
       <div className="h-screen w-screen flex flex-col justify-center">

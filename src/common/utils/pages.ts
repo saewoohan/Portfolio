@@ -5,11 +5,11 @@ export type Page = {
   items?: Page[]
 }
 
-export const PAGE_SIZE = 9
+export const PAGE_SIZE = 4
 
 export const pages: Page[] = [
   { id: 'home', name: 'Home', index: 0 },
-  { id: 'timeLine', name: 'TimeLine', index: 1 },
+  { id: 'about', name: 'About', index: 1 },
   {
     id: 'projects',
     name: 'Projects',
@@ -21,4 +21,5 @@ export const pages: Page[] = [
       { id: 'walga', name: 'Walga' },
     ],
   },
+  { id: 'timeLine', name: 'TimeLine', index: 3 },
 ]

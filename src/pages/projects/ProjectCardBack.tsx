@@ -1,7 +1,7 @@
 import { ProjectInfo } from './utils'
 import { IconButton } from '@mui/material'
 import FlipIcon from '@mui/icons-material/Flip'
-import { TaskDetails } from './TaskDetails'
+import { ListDeatils } from './TaskDetails'
 
 type Props = {
   projectInfo: ProjectInfo
@@ -28,17 +28,17 @@ export const ProjectCardBack = ({ projectInfo, onClickFlip }: Props) => {
         <div className="flex flex-col space-y-5">
           <div className="space-y-1">
             <div className="text-2xl font-bold pb-1">참여 기능</div>
-            <TaskDetails
-              title="Front-End"
+            <ListDeatils
+              title={`Front-End (${back.taskDetails.frontEnd?.contribute ?? ''}%)`}
               details={back.taskDetails.frontEnd?.contents ?? []}
               highlights={back.taskDetails.frontEnd?.highlights ?? []}
             />
-            <TaskDetails
-              title="Back-End"
+            <ListDeatils
+              title={`Back-End (${back.taskDetails.backEnd?.contribute ?? ''}%)`}
               details={back.taskDetails.backEnd?.contents ?? []}
               highlights={back.taskDetails.backEnd?.highlights ?? []}
             />
-            <TaskDetails
+            <ListDeatils
               title="ETC"
               details={back.taskDetails.etc?.contents ?? []}
               highlights={back.taskDetails.etc?.highlights ?? []}
@@ -46,8 +46,7 @@ export const ProjectCardBack = ({ projectInfo, onClickFlip }: Props) => {
           </div>
           <div className="space-y-1">
             <div className="text-2xl font-bold pb-1">느낀점</div>
-            <TaskDetails
-              title=""
+            <ListDeatils
               details={back.takeaway?.contents ?? []}
               highlights={back.takeaway?.highlights ?? []}
             />

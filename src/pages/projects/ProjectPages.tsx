@@ -28,7 +28,7 @@ export const ProjectPages = () => {
   )
 
   return (
-    <div>
+    <div className="h-hull w-hull">
       <ProjectGrid onSelectProject={handleSelectProject} />
       <Drawer
         open={isOpen}
@@ -37,14 +37,17 @@ export const ProjectPages = () => {
         PaperProps={{
           style: {
             height: '100vh',
-            width: '60vh',
+            width: '100vw',
             backgroundColor: 'black',
           },
         }}
       >
         <div className="absolute right-5 top-2">
           <IconButton onClick={handleClose}>
-            <CloseIcon className="text-white" fontSize="large" />
+            <CloseIcon
+              className="text-white  hover:text-blue-500"
+              fontSize="large"
+            />
           </IconButton>
         </div>
         {selectedProject && projectInfo && (

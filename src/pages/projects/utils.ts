@@ -11,9 +11,13 @@ export type ProjectFrontInfo = {
 }
 
 export type ProjectTaskDetail = {
-  frontEnd?: InfoContent
-  backEnd?: InfoContent
+  frontEnd?: ProjectInfoContent
+  backEnd?: ProjectInfoContent
   etc?: InfoContent
+}
+
+export type ProjectInfoContent = InfoContent & {
+  contribute: number
 }
 
 export type InfoContent = {

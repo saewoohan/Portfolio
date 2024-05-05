@@ -1,12 +1,12 @@
 import { HighlightText } from '../../common/components/HightlightSpan'
 
 type Props = {
-  title: string
+  title?: string
   details: string[]
   highlights: string[]
 }
 
-export const TaskDetails = ({ title, details, highlights }: Props) => {
+export const ListDeatils = ({ title, details, highlights }: Props) => {
   return (
     <>
       {details.length > 0 && (
