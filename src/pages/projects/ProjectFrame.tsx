@@ -3,6 +3,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 import { ProjectInfo } from './utils'
 import { HighlightText } from '../../common/components/HightlightSpan'
+import { formattedDescription, isUrl } from '../../common/utils/regex'
 
 type Props = {
   projectInfo: ProjectInfo
@@ -26,9 +27,6 @@ export const ProjectFrame = ({ projectInfo }: Props) => {
     slidesToScroll: 1,
     autoplay: true,
   }
-
-  const formattedDescription = description.replace(/\\n/g, '\n')
-  const isUrl = (text: string) => /^(http|https):\/\/[^ "]+$/.test(text)
 
   return (
     <div className="flex justify-center items-center bg-black w-full h-screen overflow-auto">
@@ -58,7 +56,7 @@ export const ProjectFrame = ({ projectInfo }: Props) => {
             </div>
             <div className="text-sm sm:text-base whitespace-pre-wrap">
               <HighlightText
-                text={formattedDescription}
+                text={formattedDescription(description)}
                 highlights={descriptionHightlight ?? []}
               />
             </div>

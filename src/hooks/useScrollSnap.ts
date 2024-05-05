@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
+import { PAGE_SIZE } from '../common/utils/pages'
 
 const DIVIDER_HEIGHT = 5
 const SCROLL_DEBOUNCE_TIME = 150
-const MAX_PAGE = 5
 
 export const useScrollSnap = () => {
   const [currentPage, setCurrentPage] = useState(0)
@@ -43,7 +43,7 @@ export const useScrollSnap = () => {
     }
 
     const handleScroll = (direction: number) => {
-      const newPage = Math.min(Math.max(currentPage + direction, 0), MAX_PAGE)
+      const newPage = Math.min(Math.max(currentPage + direction, 0), PAGE_SIZE)
       if (newPage !== currentPage) {
         setCurrentPage(newPage)
         outerDivRef.current?.scrollTo({

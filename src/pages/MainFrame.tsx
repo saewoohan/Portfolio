@@ -2,17 +2,30 @@ import { useScrollSnap } from '../hooks/useScrollSnap'
 import { OnBoarding } from './OnBoarding'
 import { ProjectPages } from './projects/ProjectPages'
 import { TimeLine } from './timeLine/TimeLine'
-import CodeIcon from '@mui/icons-material/Code'
 import IconButton from '@mui/material/IconButton'
-import WorkHistoryIcon from '@mui/icons-material/WorkHistory'
-import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined'
-import clsx from 'clsx'
+import { useState } from 'react'
+import MenuIcon from '@mui/icons-material/Menu'
+import { MenuDrawer } from './menu/MenuDrawer'
 
 export const MainFrame = () => {
-  const { outerDivRef, currentPage, setCurrentPage } = useScrollSnap()
+  const { outerDivRef, setCurrentPage } = useScrollSnap()
   const height = window.innerHeight
+  const [open, setOpen] = useState(false)
 
-  console.log(currentPage)
+  const handleClick = (page: number) => {
+    console.log(page)
+    setCurrentPage(page)
+    setOpen(false)
+    outerDivRef.current?.scrollTo({
+      top: page * (window.innerHeight + 40),
+      left: 0,
+      behavior: 'smooth',
+    })
+  }
+
+  const handleCloseDrawer = () => {
+    setOpen(false)
+  }
 
   return (
     <div
@@ -23,26 +36,16 @@ export const MainFrame = () => {
       <OnBoarding />
       <TimeLine />
       <ProjectPages />
-      <div className="absolute right-5 top-5 flex flex-col items-center space-y-3">
-        <IconButton onClick={() => setCurrentPage(2)}>
-          <CodeIcon
-            className={clsx(currentPage === 0 ? 'text-blue-500' : 'text-white')}
-            fontSize="large"
-          />
+      <div className="absolute right-5 top-2 flex flex-col items-center space-y-1">
+        <IconButton onClick={() => setOpen(true)}>
+          <MenuIcon className={'text-white'} fontSize="large" />
         </IconButton>
-
-        <WorkHistoryIcon
-          className={clsx(currentPage === 1 ? 'text-blue-500' : 'text-white')}
-          fontSize="large"
-        />
-        <div className="flex flex-col justify-end items-end space-y-2">
-          <FormatListBulletedOutlinedIcon
-            className={clsx(currentPage > 1 ? 'text-blue-500' : 'text-white')}
-            fontSize="large"
-          />
-          <div className="c"></div>
-        </div>
       </div>
+      <MenuDrawer
+        open={open}
+        onClose={handleCloseDrawer}
+        onClickMenu={handleClick}
+      />
     </div>
   )
 }
