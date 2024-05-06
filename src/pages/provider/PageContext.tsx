@@ -1,7 +1,7 @@
 import { createContext, useContext, PropsWithChildren, RefObject } from 'react'
 import { useScrollSnap } from '../../hooks/useScrollSnap'
 
-interface PageContextType {
+type PageContextType = {
   outerDivRef: RefObject<HTMLDivElement>
   currentPage: number
   onChangePage: (page: number) => void

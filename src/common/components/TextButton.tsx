@@ -2,9 +2,9 @@ import { PropsWithChildren } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 const TEXT_BUTTON_SIZE = {
-  S: 'text-lg',
-  M: 'text-2xl',
-  L: 'text-4xl',
+  S: 'sm:text-lg text-sm',
+  M: 'sm:text-2xl text-base',
+  L: 'sm:text-4xl text-lg',
 }
 
 export type TextButtonSize = keyof typeof TEXT_BUTTON_SIZE

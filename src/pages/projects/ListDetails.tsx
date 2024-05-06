@@ -6,11 +6,11 @@ type Props = {
   highlights: string[]
 }
 
-export const ListDeatils = ({ title, details, highlights }: Props) => {
+export const ListDetails = ({ title, details, highlights }: Props) => {
   return (
     <>
       {details.length > 0 && (
-        <div className="font-semibold text-lg mb-2">{title}</div>
+        <div className="font-semibold sm:text-lg text-base mb-2">{title}</div>
       )}
       <ul className="list-none pl-5">
         {details.map((detail, index) => (

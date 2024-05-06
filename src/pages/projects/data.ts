@@ -4,7 +4,7 @@ const ideaNetworking: ProjectInfo = {
   id: 'ideaNetworking',
   title: 'Idea Networking',
   front: {
-    imageSize: 7,
+    imageSize: 4,
     date: '2023.10 ~ 2023.12',
     description: `하고싶은 프로젝트에 대한 아이디어는 넘치지만 함께할 사람을 찾기 어려워 하는 사람들을 위한 앱 서비스 플랫폼입니다.
 경력에 대한 요소를 제거하고, 아이디어와 열정만으로 팀을 구성할 수 있도록 도우며, 아이디어를 실현할 수 있는 기회를 제공합니다.

@@ -75,11 +75,13 @@ export const Home = ({ onClickIcon }: Props) => {
     >
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       <div className="z-10 p-5 text-center">
-        <div className="mb-3 text-4xl font-black">{visibleText}</div>
+        <div className="mb-3 sm:text-4xl text-3xl font-black">
+          {visibleText}
+        </div>
         <HighlightText
           text={visibleSubText}
           highlights={['한승우']}
-          className="mb-5 !text-2xl font-black"
+          className="mb-5 sm:text-2xl text-xl font-black"
         />
       </div>
       <IconButton onClick={handleClickIcon} className="z-10">
