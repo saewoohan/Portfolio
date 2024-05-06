@@ -25,19 +25,19 @@ export const RightTopFrame = ({
         <IconButton onClick={onOpenMenu}>
           <MenuIcon
             className={'text-white hover:text-blue-500'}
-            fontSize={`${isMobile ? 'small' : 'large'}`}
+            fontSize={`${isMobile ? 'medium' : 'large'}`}
           />
         </IconButton>
         <IconButton href="https://github.com/saewoohan">
           <GitHubIcon
             className={'text-white  hover:text-blue-500'}
-            fontSize={`${isMobile ? 'small' : 'large'}`}
+            fontSize={`${isMobile ? 'medium' : 'large'}`}
           />
         </IconButton>
         <IconButton href="https://velog.io/@saewoohan/posts">
           <ArticleIcon
             className={'text-white  hover:text-blue-500'}
-            fontSize={`${isMobile ? 'small' : 'large'}`}
+            fontSize={`${isMobile ? 'medium' : 'large'}`}
           />
         </IconButton>
       </div>

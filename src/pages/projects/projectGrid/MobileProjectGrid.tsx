@@ -14,7 +14,7 @@ export const MobileProjectGrid = ({ onSelectProject }: Props) => {
   const isMobile = useMediaQuery({ maxWidth: 768 })
   useEffect(() => {
     let intervalId: NodeJS.Timeout
-
+    setProjectImgIndex(0)
     if (isMobile) {
       intervalId = setInterval(() => {
         setProjectImgIndex(
@@ -48,7 +48,7 @@ export const MobileProjectGrid = ({ onSelectProject }: Props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    beforeChange: (_: number, next: number) => setCurrentProjectIndex(next + 1),
+    beforeChange: (_: number, next: number) => setCurrentProjectIndex(next),
   }
 
   return (

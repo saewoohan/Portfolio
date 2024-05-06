@@ -24,7 +24,7 @@ export const MenuDrawer = ({ open, onClose, onClickMenu }: Props) => {
         <IconButton onClick={onClose}>
           <CloseIcon
             className="text-white  hover:text-blue-500"
-            fontSize={`${isMobile ? 'small' : 'large'}`}
+            fontSize={`${isMobile ? 'medium' : 'large'}`}
           />
         </IconButton>
       </div>
