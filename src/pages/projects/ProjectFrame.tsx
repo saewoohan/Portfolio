@@ -31,7 +31,7 @@ export const ProjectFrame = ({ projectInfo, onClose }: Props) => {
       onClick={handleBackgroundClick}
     >
       <div
-        className={`relative w-full max-w-4xl mx-auto [perspective:1000px]`}
+        className={`relative w-[80vw] sm:max-w-4xl mx-auto [perspective:1000px]`}
         onClick={handleCardClick}
       >
         <div

@@ -4,7 +4,7 @@ import { TimeLine } from './timeLine/TimeLine'
 import { useState } from 'react'
 import { usePage } from './provider/PageContext'
 import { RightTopFrame } from './RightTopFrame'
-import { About } from './about/About'
+import { AboutMe } from './about/AboutMe'
 
 export const MainFrame = () => {
   const { outerDivRef, onChangePage } = usePage()
@@ -28,8 +28,8 @@ export const MainFrame = () => {
         className="overflow-y-auto scrollbar-hide h-screen w-screen bg-black"
         style={{ height: `${height}px` }}
       >
-        <Home />
-        <About />
+        <Home onClickIcon={handleClickMenu} />
+        <AboutMe />
         <ProjectPages />
         <TimeLine />
       </div>

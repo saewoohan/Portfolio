@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from 'react'
 
-export const useIntersectionObsever = (
+export const useIntersectionObserver = (
   targetRef: RefObject<HTMLDivElement>,
 ) => {
   const [isInViewport, setIsInViewport] = useState(false)
@@ -10,14 +10,12 @@ export const useIntersectionObsever = (
     if (!observer.current) {
       const observerCallback = (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInViewport(true)
-          }
+          setIsInViewport(entry.isIntersecting)
         })
       }
 
       observer.current = new window.IntersectionObserver(observerCallback, {
-        threshold: 0,
+        threshold: 0.1,
       })
     }
 
@@ -26,8 +24,8 @@ export const useIntersectionObsever = (
     }
 
     return () => {
-      if (observer.current) {
-        observer.current.disconnect()
+      if (observer.current && targetRef.current) {
+        observer.current.unobserve(targetRef.current)
       }
     }
   }, [targetRef])
