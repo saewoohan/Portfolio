@@ -9,7 +9,7 @@ export const PAGE_SIZE = 4
 
 export const pages: Page[] = [
   { id: 'home', name: 'Home', index: 0 },
-  { id: 'about', name: 'About', index: 1 },
+  { id: 'aboutMe', name: 'About me', index: 1 },
   {
     id: 'projects',
     name: 'Projects',
