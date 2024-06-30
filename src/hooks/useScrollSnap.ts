@@ -1,55 +1,60 @@
 import { useEffect, useRef, useState } from 'react'
 import { PAGE_SIZE } from '../common/utils/pages'
 
-const SCROLL_DEBOUNCE_TIME = 150
+const SCROLL_DEBOUNCE_TIME = 100
 
 export const useScrollSnap = () => {
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState<number>(0)
   const outerDivRef = useRef<HTMLDivElement>(null)
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const scrollEndTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
   useEffect(() => {
-    const wheelHandler = (e: WheelEvent) => {
-      e.preventDefault()
-
-      if (!outerDivRef.current) return
-
-      if (scrollTimeoutRef.current !== null) {
-        clearTimeout(scrollTimeoutRef.current)
-      }
-
-      scrollTimeoutRef.current = setTimeout(() => {
-        const direction = e.deltaY > 0 ? 1 : -1
-        handleScroll(direction)
-      }, SCROLL_DEBOUNCE_TIME)
-    }
-
-    const keyHandler = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-        e.preventDefault()
-
-        if (!outerDivRef.current) return
-
-        if (scrollTimeoutRef.current !== null) {
-          clearTimeout(scrollTimeoutRef.current)
-        }
-
-        const direction = e.key === 'ArrowDown' ? 1 : -1
-        scrollTimeoutRef.current = setTimeout(
-          () => handleScroll(direction),
-          SCROLL_DEBOUNCE_TIME,
-        )
-      }
-    }
-
-    const handleScroll = (direction: number) => {
-      const newPage = Math.min(Math.max(currentPage + direction, 0), PAGE_SIZE)
+    const handleScrollEnd = (direction: number): void => {
+      const newPage: number = Math.max(
+        0,
+        Math.min(currentPage + direction, PAGE_SIZE - 1),
+      )
       if (newPage !== currentPage) {
         setCurrentPage(newPage)
         outerDivRef.current?.scrollTo({
           top: newPage * window.innerHeight,
-          left: 0,
           behavior: 'smooth',
         })
+      }
+    }
+
+    const wheelHandler = (e: WheelEvent): void => {
+      e.preventDefault()
+      if (!outerDivRef.current) return
+
+      const direction: number = e.deltaY > 0 ? 1 : -1
+
+      if (scrollEndTimeoutRef.current) {
+        clearTimeout(scrollEndTimeoutRef.current)
+      }
+
+      scrollEndTimeoutRef.current = setTimeout(
+        () => handleScrollEnd(direction),
+        SCROLL_DEBOUNCE_TIME,
+      )
+    }
+
+    const keyHandler = (e: KeyboardEvent): void => {
+      e.preventDefault()
+      if (!outerDivRef.current) return
+
+      const direction: number =
+        e.key === 'ArrowDown' ? 1 : e.key === 'ArrowUp' ? -1 : 0
+
+      if (direction !== 0) {
+        if (scrollEndTimeoutRef.current) {
+          clearTimeout(scrollEndTimeoutRef.current)
+        }
+
+        scrollEndTimeoutRef.current = setTimeout(
+          () => handleScrollEnd(direction),
+          SCROLL_DEBOUNCE_TIME,
+        )
       }
     }
 
@@ -60,8 +65,8 @@ export const useScrollSnap = () => {
     return () => {
       outerDiv?.removeEventListener('wheel', wheelHandler)
       window.removeEventListener('keydown', keyHandler)
-      if (scrollTimeoutRef.current !== null) {
-        clearTimeout(scrollTimeoutRef.current)
+      if (scrollEndTimeoutRef.current) {
+        clearTimeout(scrollEndTimeoutRef.current)
       }
     }
   }, [currentPage])

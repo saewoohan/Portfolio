@@ -6,7 +6,7 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import { HighlightText } from '../common/components/HightlightSpan'
 
 const fullText = 'Hello, World!'
-const subTitle = '끈기의 개발자 한승우의 포트폴리오입니다.'
+const subTitle = `새로운 아이디어를 탐구하고 실현하는 개발자 한승우의 포트폴리오입니다.`
 
 type Props = {
   onClickIcon?: (page: number) => void
@@ -26,6 +26,10 @@ export const Home = ({ onClickIcon }: Props) => {
     speed: 150,
     restart: isInViewport,
   })
+
+  const handleClickIcon = () => {
+    onClickIcon?.(1)
+  }
   useEffect(() => {
     const canvas = canvasRef.current
     const ctx = canvas?.getContext('2d')
@@ -64,10 +68,6 @@ export const Home = ({ onClickIcon }: Props) => {
     }
   }, [])
 
-  const handleClickIcon = () => {
-    onClickIcon?.(1)
-  }
-
   return (
     <div
       className="h-screen flex flex-col justify-center items-center bg-black text-white relative"
@@ -81,7 +81,7 @@ export const Home = ({ onClickIcon }: Props) => {
         <HighlightText
           text={visibleSubText}
           highlights={['한승우']}
-          className="mb-5 sm:text-2xl text-xl font-black"
+          className="mb-5 sm:text-2xl text-xl font-black w-[350px]"
         />
       </div>
       <IconButton onClick={handleClickIcon} className="z-10">
