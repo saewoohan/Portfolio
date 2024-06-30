@@ -10,7 +10,6 @@ type Props = {
 
 export const ProjectFrame = ({ projectInfo, onClose }: Props) => {
   const [isFlipped, setIsFlipped] = useState(false)
-
   const handleFlip = () => {
     setIsFlipped(!isFlipped)
   }

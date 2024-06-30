@@ -7,9 +7,8 @@ import { RightTopFrame } from './RightTopFrame'
 import { AboutMe } from './about/AboutMe'
 
 export const MainFrame = () => {
-  const { outerDivRef, onChangePage } = usePage()
-
   const height = window.innerHeight
+  const { outerDivRef, onChangePage } = usePage()
   const [isOpenMenu, setIsOpenMenu] = useState(false)
 
   const handleClickMenu = (page: number) => {

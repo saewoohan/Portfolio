@@ -151,9 +151,17 @@ const traB: ProjectInfo = {
       contents: [
         'Google Map을 메인 기능으로 사용하여 현재 사용자의 위치를 추적하고 거리를 계산해야하는데, Android와 IOS의 위치 정보제공 방식이 달라서 이 부분에서 많은 어려움을 겪었습니다. 하지만 이를 통해 익숙한 IOS 말고도 Android의 정책에 대해서도 조금 더 깊게 알 수 있는 기회였습니다.',
         '익숙하지 않은 Android의 배포에 자신이 없었는데, 앞으로 어떤 앱이든 IOS, Android 모두 어렵지 않게 개발부터 배포과정까지 도맡아 할 수 있을 거라는 자신감을 얻었습니다.',
-        '같은 팀원들이 개발 경험이 없는 팀원들이라, 많은 부분의 책임을 맡게 되었습니다. 무사히 프로젝트를 마친 후 개발에 중요한 것은 개발 실력보다는 팀원끼리의 소통과 협업임을 깨달았으며, 이를 통해 팀원들과의 소통 능력을 키울 수 있었던 기회였습니다.',
+        '같은 팀원들이 개발 경험이 없는 팀원들이라, 많은 부분의 책임을 맡게 되었습니다. 제가 모든 일을 하려기보단 역량에 맞게 업무를 분배하고, 팀원들이 더 잘 할 수 있는 일을 맡겨주어 함께 만들어가기 위해 노력했던 것이 가장 큰 성과였습니다.',
       ],
-      highlights: ['Google Map', 'Android', 'IOS', '소통', '협업'],
+      highlights: [
+        'Google Map',
+        'Android',
+        'IOS',
+        '소통',
+        '책임',
+        '역량',
+        '팀원',
+      ],
     },
   },
 }
@@ -164,10 +172,10 @@ const walgaAdmin: ProjectInfo = {
   front: {
     imageSize: 5,
     date: '2023.12 ~',
-    description: `창업팀으로 진행하는 프로젝트로, 강아지 유치원 예약 및 관리를 위한 B2B 앱 서비스입니다.
+    description: `창업팀으로 진행하는 프로젝트로, 강아지 유치원 예약 및 관리를 위한 B2B CRM 앱 서비스입니다.
 강아지 유치원을 운영하는 사장님들이 강아지를 예약하고 관리하는데 어려움을 겪는 것을 보고, 이를 해결하기 위해 시작하게 되었습니다.
 아직 정식 론칭은 아니지만 꾸준히 디벨롭 중이며, 현재는 강아지 유치원 사장님들과 사용자들의 피드백을 받아 서비스를 개선하고 있습니다.`,
-    descriptionHightlight: ['유치원', '예약'],
+    descriptionHightlight: ['유치원', '예약', 'CRM'],
     details: [
       {
         label: '주요 기능',
@@ -175,11 +183,11 @@ const walgaAdmin: ProjectInfo = {
       },
       {
         label: 'Frontend',
-        text: 'Flutter, Riverpod',
+        text: 'Flutter, Riverpod, GraphQL, GraphQL Codegen',
       },
       {
         label: 'Bakend',
-        text: 'Node.js, Postgresql, Express, FireBase, Aws',
+        text: 'Node.js, Postgresql, Express, FireBase, Aws, GraphQL',
       },
       {
         label: 'AppStore',
@@ -227,10 +235,24 @@ const walgaAdmin: ProjectInfo = {
     },
     takeaway: {
       contents: [
-        'CTO 혹은 프로젝트 장으로써, 프로젝트의 전체적인 흐름을 파악하고, 팀원들의 역량을 파악하여 업무를 분배하는 것이 중요하다는 것을 깨달았습니다. 팀원들의 역량을 파악하여 업무를 분배하고, 팀원들이 더 잘 할 수 있는 일을 맡겨주어 효율적으로 프로젝트를 진행할 수 있었습니다.',
-        '팀원들과의 소통이 원활하지 않아 프로젝트가 지연되는 경우가 많았는데, JIRA 및 Git Review Rule 등 여러가지 방법을 통해서 소통을 더욱 증진하고자 노력했고 이를 통해 조금 더 팀원들을 이해하고 소통하는 방법을 배울 수 있었던 기회였습니다.',
+        '테크 리더로서 프로젝트의 전체적인 흐름을 파악하고, 특히 프로젝트의 요구사항에 맞게 백엔드와 프론트엔드를 어떻게 설계하고 구현할지에 대해 많은 고민을 하게 되었습니다. 개발 토대부터 배포까지 전체적인 프로세스를 경험하며, 개발자로서의 역량을 키울 수 있었던 프로젝트였습니다.',
+        '팀원들과의 소통이 원활하지 않아 프로젝트가 지연되는 경우가 많았는데, JIRA 및 Git Review Rule 등 여러가지 방법을 통해서 소통을 더욱 증진하고자 노력했고, 잦은 교류를 통해 프로젝트가 빠르게 진전되는 것을 체감하였습니다. 이를 통해 팀원들의 의견 종합 및 소통의 중요성을 깨달을 수 있게 되었습니다.',
+        '빠른 MVP 출시를 위해, 어떠한 기술과 라이브러리를 도입해야 하는지 고민하고 다양한 방법을 시도해보았으며, 이를 통해 단순히 기술을 도입하는 것이 아닌 장단점들을 비교하며 도입하는 습관을 기를 수 있는 계기가 되었습니다.',
       ],
-      highlights: ['소통', '협업', '업무', '분배', 'JIRA', 'Git Review Rule'],
+      highlights: [
+        '소통',
+        '설계',
+        '구현',
+        '교류',
+        '의견',
+        '프로세스',
+        '분배',
+        'JIRA',
+        'Git Review Rule',
+        'MVP',
+        '장단점',
+        '도입',
+      ],
     },
   },
 }
@@ -244,7 +266,7 @@ const walga: ProjectInfo = {
     description: `창업팀으로 진행하는 프로젝트로, WalgaAdmin과 연동되는 B2C 앱 서비스입니다.
 강아지 유치원을 운영하는 사장님들이 편리하게 예약을 관리할 수 있도록, 사용자들이 강아지 유치원을 예약하고 관리할 수 있는 서비스입니다.
 WalgaAdmin과 공통되는 로직이 많기에, 여러 서비스에서 공통적으로 컴포넌트나 로직을 관리할 수 있는 방법에 대해서 많이 고민하게 된 프로젝트입니다.`,
-    descriptionHightlight: ['B2C', '예약', '유치원'],
+    descriptionHightlight: ['B2C', '예약', '유치원', '공통'],
     details: [
       {
         label: '주요 기능',
@@ -252,11 +274,11 @@ WalgaAdmin과 공통되는 로직이 많기에, 여러 서비스에서 공통적
       },
       {
         label: 'Frontend',
-        text: 'Flutter, Riverpod',
+        text: 'Flutter, Riverpod, GrphQL, GraphQL Codegen',
       },
       {
         label: 'Bakend',
-        text: 'Node.js, Postgresql, Express, FireBase, Aws',
+        text: 'Node.js, Postgresql, Express, FireBase, Aws, GraphQL',
       },
       {
         label: 'AppStore',

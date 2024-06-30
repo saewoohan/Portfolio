@@ -1,12 +1,10 @@
 module.exports = {
-    content: [
-        "./src/**/*.{js,jsx,ts,tsx}",  
-    ],
-    theme: {
-      extend: {},
-      fontFamily: {
-        pretendard: ["Pretendard"],
-      },
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {},
+    fontFamily: {
+      pretendard: ['Pretendard'],
     },
-    plugins: [require("tailwind-scrollbar-hide")],
-  }
+  },
+  plugins: [require('tailwind-scrollbar-hide')],
+}
