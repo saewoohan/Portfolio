@@ -27,7 +27,7 @@ export const ProjectCardFront = ({ projectInfo, onClickFlip }: Props) => {
   }
 
   return (
-    <div className="flex flex-row mx-auto w-full overflow-y-auto">
+    <div className="flex flex-row mx-auto w-full h-full">
       {!isMobile && (
         <div className="w-full sm:w-2/5 flex items-center justify-center px-8 sm:px-8">
           <Slider {...settings} className="w-full h-full">

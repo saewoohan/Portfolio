@@ -13,7 +13,7 @@ export const ProjectCardBack = ({ projectInfo, onClickFlip }: Props) => {
 
   return (
     <div
-      className="absolute inset-0 overflow-auto scrollbar-hide bg-white text-black p-4 sm:p-8 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[5px]"
+      className="absolute inset-0 h-[700px] bg-white text-black p-4 sm:p-8 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[5px]"
       onClick={onClickFlip}
     >
       {back && (
